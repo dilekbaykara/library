@@ -2,7 +2,7 @@ h1 {
 font-family: ohno-blazeface, sans-serif;
 font-weight: 100;
 font-style: normal;
-font-size: 6vh;
+font-size: 8vh;
 color: #001D4A;
 }
 
@@ -17,7 +17,7 @@ font-family: poppins, sans-serif;
 font-weight: 300;
 font-style: normal; 
 font-size: 3vh;
-color: #9DD1F1;
+color: #c2e8ff;
 }
 
 button {
@@ -26,9 +26,51 @@ width: 20vh;
 font-size: 3vh;
 background-color: #27476E;
 border-radius: 22px;
+border-color: #daf1ff;
+border-width: 2px;
+border-style: solid;
+}
 
+button:hover{
+background-color: #192c44;    
 }
 
 body {
-    background-color:#9DD1F1;
+background-color:#9DD1F1;
 }
+
+.body-box{
+display: flex;
+justify-content: center;
+}
+
+
+
+
+/* FOOTER */
+
+footer {
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 15px;
+    display: flex;
+    margin: 5px;
+    font-family: poppins, sans-serif;
+    font-weight: 900;
+    font-style: normal; 
+    color:  #27476E;
+  }
+  
+  .fa-github {
+    color:  #27476E;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+  
+    transform: rotate(360deg) scale(1.2);
+  }
