@@ -12,6 +12,7 @@
     <!----------Font Below ---------------->
     <link rel="stylesheet" href="https://use.typekit.net/jmq2vxa.css">
     <link rel="stylesheet" href="styles.css">
+  
     <title>My Library</title>
 </head>
 <body>
@@ -25,14 +26,16 @@
   
   <!-----Form information----->
   <div class="form-popup">
+    <div class="form-content"
     <form action="example.com/path" class="form-container" id="popUpForm">
       <input type="text" id="title" placeholder="Title">
       <input type="author" id="author" placeholder="Author">
       <input type="pages" id="pages" placeholder="Pages">
+      <label for="readOption">Have you read it?</label> 
       <input type="checkbox" id="readOption" name="readOption">
-      <label for="readOption">Have you read it?</label>
-      <button type="submit">Submit</button>
+      <button type="submit" id="submit">Submit</button>
     </form>
+  </div>
   </div>
 
 <footer>

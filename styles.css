@@ -17,7 +17,7 @@ h2 {
   font-weight: 300;
   font-style: normal;
   font-size: 3vh;
-  color: #c2e8ff;
+  color: #ffffff;
 }
 
 button {
@@ -26,7 +26,7 @@ button {
   font-size: 3vh;
   background-color: #27476E;
   border-radius: 22px;
-  border-color: #daf1ff;
+  border-color: #ffffff;
   border-width: 2px;
   border-style: solid;
 }
@@ -49,18 +49,61 @@ body {
 
 .form-popup {
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
+  position: absolute;
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   z-index: 9;
 }
 
-.form-container {
-  display: block;
-  max-width: 300px;
-  padding: 10px;
+.form-content {
+  display: flex;
+  border-radius: 20px;
+  width:40vh; 
+  height: 50vh;
+  border: 3px solid #001D4A;
+  padding: 20px;
+  background-color: #9DD1F1;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
+.form-container {
+  flex-direction: column;
+}
+
+label {
+  font-family: poppins, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3vh;
+}
+
+input {
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  margin: 4px;
+  background-color: #d0edff;
+  border: none;
+  font-family: poppins, sans-serif;
+  font-weight: 300;
+}
+
+#submit {
+  margin: 4px;
+  height: 50px;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+input[type=checkbox] {
+    transform: scale(0.8);
+}
+
 
 /* FOOTER */
 footer {
