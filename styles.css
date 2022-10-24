@@ -106,20 +106,21 @@ input[type=checkbox] {
 
 
 /* FOOTER */
+
 footer {
-    align-self: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding-top: 15px;
-    display: flex;
     margin: 5px;
     margin-top: 15px;
     font-family: poppins, sans-serif;
     font-weight: 900;
     font-style: normal; 
     color:  #27476E;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .fa-github {
