@@ -1,3 +1,10 @@
+/*CSS RESET*/
+* {
+  margin:0;
+  padding:0;
+}
+
+
 h1 {
   font-family: ohno-blazeface, sans-serif;
   font-weight: 100;
@@ -9,7 +16,9 @@ h1 {
 .head-box {
   background-color: #9DD1F1;
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 20vh;
 }
 
 h2 {
@@ -27,7 +36,6 @@ h3 {
   font-size: 4vh;
   color: #001D4A;
 }
-
 
 button {
   height: 10vh;
@@ -50,67 +58,64 @@ button:hover {
 }
 
 body {
-  background-color: #9DD1F1;
+  min-height: 100vh;
+  background: linear-gradient(180deg,#d0edff,#9DD1F1) no-repeat;
 }
 
 .body-box {
+  margin: 10vh;
   display: flex;
   justify-content: center;
 }
-
 
 /* The pop up form - hidden by default */
 
 .form-popup {
   display: none;
   position: absolute;
-    max-width: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 9;
 }
 
 .form-content {
   display: flex;
   border-radius: 20px;
-  width:40vh; 
-  height: 50vh;
+  width: 35vh; 
+  height: 45vh;
   border: 3px solid #001D4A;
   padding: 20px;
   background-color: #9DD1F1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 15px;
+  gap: 10px;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 .isRead{
   display: flex;
   height: 60px;
-  width: 400px;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
 
 label {
   font-family: poppins, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
 
 input {
   border-radius: 10px;
-  height: 40px;
-  width: 200px;
-  margin: 7px;
+  height: 5vh;
+  margin: 5px;
+  width: 100%;
   background-color: #d0edff;
   border: none;
   font-family: poppins, sans-serif;
@@ -120,6 +125,7 @@ input {
 #submit {
   margin: 4px;
   height: 50px;
+  width: 100%;
   border-radius: 15px;
   color: #ffffff;
 }
@@ -136,7 +142,7 @@ footer {
     margin: 5px;
     margin-top: 15px;
     font-family: poppins, sans-serif;
-    font-weight: 900;
+    font-weight: 1000;
     font-style: normal; 
     color:  #27476E;
     position: absolute;
