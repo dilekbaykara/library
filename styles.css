@@ -16,9 +16,18 @@ h2 {
   font-family: poppins, sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 3vh;
-  color: #ffffff;
+  font-size: 5vh;
+  color: #001D4A;
 }
+
+h3 {
+  font-family: ohno-blazeface, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 4vh;
+  color: #001D4A;
+}
+
 
 button {
   height: 10vh;
@@ -29,6 +38,11 @@ button {
   border-color: #ffffff;
   border-width: 2px;
   border-style: solid;
+  font-family: poppins, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3vh;
+  color:#ffffff;
 }
 
 button:hover {
@@ -66,27 +80,37 @@ body {
   padding: 20px;
   background-color: #9DD1F1;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .form-container {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isRead{
+  display: flex;
+  height: 60px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
   font-family: poppins, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
-  font-size: 3vh;
+  font-size: 2vh;
 }
 
 input {
   border-radius: 10px;
   height: 40px;
   width: 200px;
-  margin: 4px;
+  margin: 7px;
   background-color: #d0edff;
   border: none;
   font-family: poppins, sans-serif;
@@ -101,7 +125,8 @@ input {
 }
 
 input[type=checkbox] {
-    transform: scale(0.8);
+    width: 20px;
+    margin: 10px;
 }
 
 
