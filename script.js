@@ -17,10 +17,15 @@ newBook.prototype.info = function() {
   console.log()
 } */
 
-
+// User interface //
 const popUpForm = document.querySelector(".form-popup");
 const button = document.querySelector("#addBook");
 
 button.addEventListener("click", () => {
   popUpForm.style.display = "block";
 });
+
+document.getElementById('invisibleDiv').onclick = function()
+{
+   popUpForm.style.display = "none"; 
+}

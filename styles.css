@@ -19,6 +19,7 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 20vh;
+  border-bottom: 2px solid #e0f3ff;
 }
 
 h2 {
@@ -43,13 +44,10 @@ button {
   font-size: 3vh;
   background-color: #27476E;
   border-radius: 22px;
-  border-color: #ffffff;
-  border-width: 2px;
-  border-style: solid;
+  border-style: none;
   font-family: poppins, sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 3vh;
   color:#ffffff;
 }
 
@@ -73,7 +71,6 @@ body {
 .form-popup {
   display: none;
   position: absolute;
-  max-width: 500px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -91,7 +88,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 17px;
   gap: 10px;
 }
 
@@ -113,8 +110,8 @@ label {
 
 input {
   border-radius: 10px;
-  height: 5vh;
-  margin: 5px;
+  height: 80px;
+  margin: 3px;
   width: 100%;
   background-color: #d0edff;
   border: none;
@@ -124,10 +121,11 @@ input {
 
 #submit {
   margin: 4px;
-  height: 50px;
+  height: 70px;
   width: 100%;
   border-radius: 15px;
   color: #ffffff;
+  border: none;
 }
 
 input[type=checkbox] {
@@ -135,7 +133,10 @@ input[type=checkbox] {
     margin: 10px;
 }
 
-
+#invisibleDiv {
+  height: 100vh;
+  width: 100vh;
+}
 /* FOOTER */
 
 footer {
