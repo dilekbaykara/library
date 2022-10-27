@@ -20,12 +20,17 @@ newBook.prototype.info = function() {
 // User interface //
 const popUpForm = document.querySelector(".form-popup");
 const button = document.querySelector("#addBook");
+const overlay = document.getElementById('overlay');
 
-button.addEventListener("click", () => {
-  popUpForm.style.display = "block";
-});
 
 document.getElementById('invisibleDiv').onclick = function()
 {
    popUpForm.style.display = "none"; 
-}
+   overlay.style.display = "none";
+};
+
+
+button.addEventListener("click", () => {
+  popUpForm.style.display = "block";
+  overlay.style.display = "block";
+});
