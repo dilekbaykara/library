@@ -41,6 +41,8 @@ h3 {
 button {
   height: 10vh;
   width: 20vh;
+  min-width: 20vh;
+  min-height: 10vh;
   font-size: 3vh;
   background-color: #27476E;
   border-radius: 22px;
@@ -78,25 +80,26 @@ body {
 }
 
 .form-content {
-  display: flex;
+  text-align: center;
   border-radius: 20px;
-  width: 35vh; 
-  height: 45vh;
+  width: 30vh; 
+  height: auto;
   border: 3px solid #001D4A;
   padding: 20px;
   background-color: #9DD1F1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 17px;
   gap: 10px;
 }
 
+.form-container {
+  min-width: 20vh;
+  min-height: 50vh;
+}
 
 .isRead{
   display: flex;
-  height: 60px;
+  height: 30px;
   width: 100%;
+  margin: 2px;
   align-items: center;
   justify-content: center;
 }
@@ -110,7 +113,7 @@ label {
 
 input {
   border-radius: 10px;
-  height: 80px;
+  height: 50px;
   margin: 3px;
   width: 100%;
   background-color: #d0edff;
@@ -120,8 +123,8 @@ input {
 }
 
 #submit {
-  margin: 4px;
-  height: 70px;
+  margin-top: 4px;
+  height: 20px;
   width: 100%;
   border-radius: 15px;
   color: #ffffff;
@@ -148,6 +151,19 @@ width: 100%;
 height: 100%;
 background-color: rgba(0, 0, 0, 0.5);
 }
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* FOOTER */
 
 footer {
