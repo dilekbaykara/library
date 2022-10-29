@@ -30,14 +30,14 @@
     <div class="form-content"
     <form action="example.com/path" class="form-container" id="popUpForm">
       <h3>add new book</h3>
-      <input type="text" id="title" placeholder="Title">
-      <input type="author" id="author" placeholder="Author">
-      <input type="pages" id="pages" placeholder="Pages">
+      <input class="input" type="text" id="title" placeholder="Title" required maxlength="100">
+      <input type="author" id="author" placeholder="Author" required maxlength="100">
+      <input type="number" id="pages" placeholder="Pages" required max="10000">
     <div class="isRead">
       <label for="readOption">Have you read it?</label> 
       <input type="checkbox" id="readOption" name="readOption">
     </div>
-      <button type="submit" id="submit">Submit</button>
+      <button class="submit" type="submit" id="submit">Submit</button>
     </form>
   </div>
   </div>

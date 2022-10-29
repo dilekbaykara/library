@@ -90,7 +90,7 @@ const createBookCard = (book) => {
 
   if (book.isRead) {
     readBtn.textContent = 'Read'
-    readBtn.classList.add('btn-light-green')
+    readBtn.classList.add('submit');
   } else {
     readBtn.textContent = 'Not read'
     readBtn.classList.add('btn-light-red')
