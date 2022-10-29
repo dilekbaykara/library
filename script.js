@@ -1,34 +1,56 @@
-/* let myLibrary = [];
-function Book() {
-  // the constructor...
-}
-function addBookToLibrary() {
-  // do stuff here
+// Library Functions //
+
+class Book {
+  constructor(
+    title = 'Unknown',
+    author = 'Unknown',
+    pages = '0',
+    isRead = false
+  ) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.isRead = isRead
+  }
 }
 
-function newBook(title,author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
+class Library {
+  constructor() {
+    this.books = []
+  }
+
+  addBook(newBook) {
+    if (!this.isInLibrary(newBook)) {
+      this.books.push(newBook)
+    }
+  }
+
+  removeBook(title) {
+    this.books = this.books.filter((book) => book.title !== title)
+  }
+
+  getBook(title) {
+    return this.books.find((book) => book.title === title)
+  }
+
+  isInLibrary(newBook) {
+    return this.books.some((book) => book.title === newBook.title)
+  }
 }
 
-newBook.prototype.info = function() {
-  console.log()
-} */
+const library = new Library()
 
 // User interface //
 const popUpForm = document.querySelector(".form-popup");
 const button = document.querySelector("#addBook");
 const overlay = document.getElementById('overlay');
 
-
+// Form Pop Up function //
 document.getElementById('invisibleDiv').onclick = function()
 {
    popUpForm.style.display = "none"; 
    overlay.style.display = "none";
 };
-
 
 button.addEventListener("click", () => {
   popUpForm.style.display = "block";
