@@ -76,13 +76,6 @@ const createBookCard = (book) => {
   const readBtn = document.createElement('button')
   const removeBtn = document.createElement('button')
 
-  bookCard.classList.add('book-card')
-  buttonGroup.classList.add('button-group')
-  readBtn.classList.add('btn')
-  removeBtn.classList.add('btn')
-  readBtn.onclick = toggleRead
-  removeBtn.onclick = removeBook
-
   title.textContent = `"${book.title}"`
   author.textContent = book.author
   pages.textContent = `${book.pages} pages`
@@ -112,3 +105,7 @@ const getBookFromInput = () => {
   const isRead = document.getElementById('isRead').checked
   return new Book(title, author, pages, isRead)
 }
+
+
+const addBtn = document.querySelector("#submit");
+addBtn.addEventListener('click', createBookCard);
