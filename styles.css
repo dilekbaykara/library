@@ -162,8 +162,10 @@ background-color: rgba(0, 0, 0, 0.5);
 
 .book-card {
   display: flex;
+  background-color: #d0edff;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 
 /* FOOTER */

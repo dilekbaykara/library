@@ -1,44 +1,18 @@
 // Library Functions //
 
+let myLibrary = [];
+
 class Book {
-  constructor(
+constructor(title, author, pages, read) {
     title = 'Unknown',
     author = 'Unknown',
     pages = '0',
-    isRead = false
-  ) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.isRead = isRead
-  }
 }
 
-class Library {
-  constructor() {
-    this.books = []
-  }
+function addBookToLibrary(){
 
-  addBook(newBook) {
-    if (!this.isInLibrary(newBook)) {
-      this.books.push(newBook)
-    }
-  }
-
-  removeBook(title) {
-    this.books = this.books.filter((book) => book.title !== title)
-  }
-
-  getBook(title) {
-    return this.books.find((book) => book.title === title)
-  }
-
-  isInLibrary(newBook) {
-    return this.books.some((book) => book.title === newBook.title)
-  }
 }
 
-const library = new Library()
 
 // User interface //
 const popUpForm = document.querySelector(".form-popup");
@@ -46,6 +20,7 @@ const button = document.querySelector("#addBook");
 const overlay = document.getElementById('overlay');
 const booksGrid = document.getElementById('booksGrid');
 const addBookForm = document.getElementById('addBookForm');
+const bookCard = document.querySelector('.book-card');
 
 // Form Pop Up function //
 document.getElementById('invisibleDiv').onclick = function()
