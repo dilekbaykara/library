@@ -4,9 +4,11 @@ let myLibrary = [];
 
 class Book {
 constructor(title, author, pages, read) {
-    title = 'Unknown',
-    author = 'Unknown',
-    pages = '0',
+    this.title = form.title.value;
+    this.author = form.author.value;
+    this.pages = form.pages.value + 'pages';
+    this.read = form.read.checked;
+}
 }
 
 function addBookToLibrary(){
