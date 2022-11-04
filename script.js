@@ -23,15 +23,15 @@ class book {
       popUpForm.style.display = "none";
       overlay.style.display = "none";
     }
+    
     static addBookToLibrary(book) {
       const bookCard = document.querySelector('#library-container');
-      bookCard.innerHtml =
-`
-      <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td>${book.pages}</td>
-      <td>${book.read}</td>
-`
+      bookCard.innerHTML = `
+      <p>${book.title}</p>
+      <p>${book.author}</p>
+      <p>${book.pages}</p>
+      `
+
       bookCard.appendChild(title);
       bookCard.appendChild(author);
       bookCard.appendChild(pages);
