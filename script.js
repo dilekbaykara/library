@@ -1,9 +1,9 @@
 // Book Class : Represents a Book //
-class book {
+class Book {
   constructor(title, author, pages, read) {
       this.title = title;
       this.author = author;
-      this.pages = pages + 'pages';
+      this.pages = pages + ' pages';
       this.read = read;
   }
   }
@@ -13,8 +13,7 @@ class book {
     static displayBooks(){
       const StoredBooks = [
         {
-          title: 'Book One',
-          author: 'John Doe',
+         
         }
       ];
       const books = StoredBooks;
@@ -26,15 +25,15 @@ class book {
     
     static addBookToLibrary(book) {
       const bookCard = document.querySelector('#library-container');
-      bookCard.innerHTML = `
+      const column = document.createElement('p');
+
+      column.innerHTML = `
       <p>${book.title}</p>
       <p>${book.author}</p>
       <p>${book.pages}</p>
-      `
+      `;
 
-      bookCard.appendChild(title);
-      bookCard.appendChild(author);
-      bookCard.appendChild(pages);
+      bookCard.appendChild(column);
     }
   }
   
@@ -64,5 +63,18 @@ class book {
   
   
   // Submit Button Event Listener (displays bookCard) //
-  
-  submitBtn.addEventListener("click", UI.displayBooks); 
+submitBtn.addEventListener('click', UI.displayBooks);
+
+  // Event: Add a Book
+document.querySelector('#form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  // Get form values
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+
+  const book = new Book(title,author,pages);
+
+  UI.addBookToLibrary(book);
+
+});
