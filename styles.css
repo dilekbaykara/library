@@ -160,8 +160,10 @@ background-color: rgba(0, 0, 0, 0.5);
 
 }
 
-.book-card {
-  display: flex;
+#library-container {
+  display: none;
+  height: 100vh;
+  width: 100vh;
   background-color: #d0edff;
   flex-direction: column;
   justify-content: space-between;
