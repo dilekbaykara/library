@@ -35,7 +35,16 @@ class Book {
 
       bookCard.appendChild(column);
     }
+  
+
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
   }
+      
+    
+}
   
  
   
@@ -76,5 +85,7 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   const book = new Book(title,author,pages);
 
   UI.addBookToLibrary(book);
+
+  UI.clearFields();
 
 });
