@@ -7,6 +7,7 @@
   const form = document.querySelector('form-container');
   const submitBtn = document.getElementById('submit');
   const buttonGroup = document.querySelector('button-group');
+  const removeBtn = document.querySelector('remove');
   bookCard.style.display = "none";
 
 // Book Class : Represents a Book //
@@ -44,6 +45,9 @@ class Book {
       <p>${book.author}</p>
       <p>${book.pages}</p>
       `;
+
+      removeBtn.innerHTML = `
+      <p>Remove<p>`;
 
       bookCard.appendChild(buttonGroup);
       buttonGroup.appendChild(removeBtn);
