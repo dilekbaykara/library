@@ -1,11 +1,13 @@
 // User interface //
-  const bookCard = document.querySelector('#book-container');
+  const bookCard = document.querySelector('.book-container');
   const popUpForm = document.querySelector('.form-popup');
   const button = document.getElementById('addBook');
   const overlay = document.getElementById('overlay');
   const booksGrid = document.getElementById('books-grid');
-  const form = document.querySelector('.form-container');
+  const form = document.querySelector('form-container');
   const submitBtn = document.getElementById('submit');
+  const buttonGroup = document.querySelector('button-group');
+  bookCard.style.display = "none";
 
 // Book Class : Represents a Book //
 class Book {
@@ -20,29 +22,32 @@ class Book {
   //creates book from Book Constructor, adds to library
   class UI {
     static displayBooks(){
-      const StoredBooks = [
-        {
-         
-        }
-      ];
-      const books = StoredBooks;
+      const books = Store.getBooks();
       books.forEach((book) => UI.addBookToLibrary(book));
-      bookCard.style.display = "block";
       popUpForm.style.display = "none";
       overlay.style.display = "none";
     }
     
     static addBookToLibrary(book) {
-      const bookContent = document.querySelector('.book-info');
-      const column = document.createElement('p');
+      const bookCard = document.createElement('div');
+      const removeBtn = document.createElement('button');
+      const buttonGroup = document.createElement('div');
 
-      column.innerHTML = `
+
+      bookCard.classList.add('book-container');
+      buttonGroup.classList.add('button-group');
+      removeBtn.classList.add('remove');
+
+
+      bookCard.innerHTML = `
       <p>${book.title}</p>
       <p>${book.author}</p>
       <p>${book.pages}</p>
       `;
 
-      bookContent.appendChild(column);
+      bookCard.appendChild(buttonGroup);
+      buttonGroup.appendChild(removeBtn);
+      booksGrid.appendChild(bookCard);
     }
   
     static deleteBook(el){
@@ -55,9 +60,9 @@ class Book {
       const div = document.createElement('div');
       div.className = `alert ${className}`;
       div.appendChild(document.createTextNode(message));
-      const container = document.querySelector('.form-container');
+      const container = document.querySelector('form-container');
       const form = document.querySelector('#form');
-      container.insertBefore(div, form);
+      container.insertBefore(form, container);
       // Vanish in 3 seconds
       setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
@@ -67,13 +72,37 @@ class Book {
     document.querySelector('#author').value = '';
     document.querySelector('#pages').value = '';
   }
-      
-    
 }
-  
- 
+  //Store Class: Handles Storage
+  class Store {
+    static getBooks() {
+      let books;
+      if(localStorage.getItem('books') === null) {
+        books = [];
+      } else {
+        books = JSON.parse(localStorage.getItem('books'));
+      }
+      return books;
+    }
 
-  
+    static addBook(book) {
+      const books = Store.getBooks();
+      books.push(book);
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+    static removeBook(pages) {
+      const books = Store.getBooks();
+      books.forEach((book, index) => {
+        if(book.pages == pages) {
+          books.splice(index, 1);
+        }
+      });
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+  }  
+
+
+
   // Form Pop Up function //
   document.getElementById('invisibleDiv').onclick = function()
   {
@@ -108,15 +137,23 @@ class Book {
     //Add book to UI
     UI.addBookToLibrary(book);
 
+    //Add book to store
+    Store.addBook(book);
+
+    //Show success message
+    UI.showAlert('Book Added', 'success');
+
     //Clear fields
     UI.clearFields();
     }
   });
 
-    
-    
+  
 
   // Event: Remove a book
   document.querySelector('#books-grid').addEventListener('click', (e) => {
     UI.deleteBook(e.target)
+
+     //Show success message
+     UI.showAlert('Book Removed', 'success');
   });
