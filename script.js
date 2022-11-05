@@ -36,6 +36,11 @@ class Book {
       bookCard.appendChild(column);
     }
   
+    static deleteBook(el){
+      if(el.classList.contains('remove')) {
+        el.parentElement.parentElement.remove();
+      }
+    }
 
   static clearFields() {
     document.querySelector('#title').value = '';
@@ -54,7 +59,7 @@ class Book {
   const popUpForm = document.querySelector('.form-popup');
   const button = document.getElementById('addBook');
   const overlay = document.getElementById('overlay');
-  const booksGrid = document.getElementById('booksGrid');
+  const booksGrid = document.getElementById('books-grid');
   const form = document.querySelector('.form-container');
   const submitBtn = document.getElementById('submit');
   
@@ -72,20 +77,36 @@ class Book {
   
   
   // Submit Button Event Listener (displays bookCard) //
-submitBtn.addEventListener('click', UI.displayBooks);
+  submitBtn.addEventListener('click', UI.displayBooks);
 
   // Event: Add a Book
-document.querySelector('#form').addEventListener('submit', (e) => {
+  document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
   // Get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
   const pages = document.querySelector('#pages').value;
+  
+  //Validate
+    if(title === '' || author === '' || pages === '') {
+      alert('Please fill in all fields');
+    } else {
+      
+    // Instantiate Book
+    const book = new Book(title,author,pages);
 
-  const book = new Book(title,author,pages);
+    //Add book to UI
+    UI.addBookToLibrary(book);
 
-  UI.addBookToLibrary(book);
+    //Clear fields
+    UI.clearFields();
+    }
+  });
 
-  UI.clearFields();
+    
+    
 
-});
+  // Event: Remove a book
+  document.querySelector('#books-grid').addEventListener('click', (e) => {
+    UI.deleteBook(e.target)
+  });
