@@ -1,3 +1,12 @@
+// User interface //
+  const bookCard = document.querySelector('#book-container');
+  const popUpForm = document.querySelector('.form-popup');
+  const button = document.getElementById('addBook');
+  const overlay = document.getElementById('overlay');
+  const booksGrid = document.getElementById('books-grid');
+  const form = document.querySelector('.form-container');
+  const submitBtn = document.getElementById('submit');
+
 // Book Class : Represents a Book //
 class Book {
   constructor(title, author, pages, read) {
@@ -24,7 +33,7 @@ class Book {
     }
     
     static addBookToLibrary(book) {
-      const bookCard = document.querySelector('#library-container');
+      const bookContent = document.querySelector('.book-info');
       const column = document.createElement('p');
 
       column.innerHTML = `
@@ -33,13 +42,24 @@ class Book {
       <p>${book.pages}</p>
       `;
 
-      bookCard.appendChild(column);
+      bookContent.appendChild(column);
     }
   
     static deleteBook(el){
       if(el.classList.contains('remove')) {
         el.parentElement.parentElement.remove();
       }
+    }
+
+    static showAlert(message, className) {
+      const div = document.createElement('div');
+      div.className = `alert ${className}`;
+      div.appendChild(document.createTextNode(message));
+      const container = document.querySelector('.form-container');
+      const form = document.querySelector('#form');
+      container.insertBefore(div, form);
+      // Vanish in 3 seconds
+      setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
 
   static clearFields() {
@@ -52,16 +72,7 @@ class Book {
 }
   
  
-  
 
-  // User interface //
-  const bookCard = document.querySelector('#library-container');
-  const popUpForm = document.querySelector('.form-popup');
-  const button = document.getElementById('addBook');
-  const overlay = document.getElementById('overlay');
-  const booksGrid = document.getElementById('books-grid');
-  const form = document.querySelector('.form-container');
-  const submitBtn = document.getElementById('submit');
   
   // Form Pop Up function //
   document.getElementById('invisibleDiv').onclick = function()
@@ -89,9 +100,8 @@ class Book {
   
   //Validate
     if(title === '' || author === '' || pages === '') {
-      alert('Please fill in all fields');
+      UI.showAlert('Please fill in all fields','danger');
     } else {
-      
     // Instantiate Book
     const book = new Book(title,author,pages);
 

@@ -161,7 +161,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 /* BOOK CARD */
 
-#library-container {
+#book-container {
   display: none;
   height: 50vh;
   width: 50vh;
