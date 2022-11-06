@@ -62,11 +62,11 @@ class Book {
 
     static showAlert(message, className) {
       const div = document.createElement('div');
-      div.className = `alert ${className}`;
+      div.className = `alert alert-${className}`;
       div.appendChild(document.createTextNode(message));
-      const container = document.querySelector('form-container');
-      const form = document.querySelector('#form');
-      container.insertBefore(form, container);
+      const container = document.querySelector('.main-container');
+      const form = document.querySelector('.body-box');
+      container.insertBefore(div, form);
       // Vanish in 3 seconds
       setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
