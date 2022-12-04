@@ -110,6 +110,8 @@ body {
   border-radius: 20px;
   width: 30vh; 
   height: auto;
+  display: flex;
+  align-content: center;
   border: 3px solid #001D4A;
   padding: 20px;
   background-color: #9DD1F1;
@@ -140,8 +142,7 @@ label {
 input {
   border-radius: 10px;
   height: 50px;
-  margin: 3px;
-  width: 100%;
+  margin: 4px;
   padding: 4px;
   background-color: #d0edff;
   border: none;
