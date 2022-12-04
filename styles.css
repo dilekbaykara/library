@@ -4,6 +4,17 @@
   padding:0;
 }
 
+div {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  font-family: poppins, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 5vh;
+  color: #ff0000;
+}
+
 
 h1 {
   font-family: ohno-blazeface, sans-serif;
