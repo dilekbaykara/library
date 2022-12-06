@@ -16,6 +16,11 @@ div {
 }
 
 
+.alert{
+font-size: 40px;
+}
+
+
 h1 {
   font-family: ohno-blazeface, sans-serif;
   font-weight: 100;
@@ -29,7 +34,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: 17vh;
   border-bottom: 2px solid #e0f3ff;
   margin-top: 0;
 }
@@ -61,7 +66,7 @@ button {
   font-weight: 300;
   font-style: normal;
   color:#ffffff;
-  margin-top: 10px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -89,6 +94,7 @@ body {
 }
 
 .body-box {
+  margin-top: 3vh;
   margin: 3vh;
   display: flex;
   justify-content: center;
