@@ -228,6 +228,8 @@ footer {
     font-style: normal; 
     color:  #27476E;
     position: absolute;
+    display: flex;
+    justify-content: center;
     bottom: 0;
     left: 0;
     right: 0;
